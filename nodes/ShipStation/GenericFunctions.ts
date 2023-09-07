@@ -23,7 +23,7 @@ export async function shipStationApiRequest(this: IHookFunctions | IExecuteFunct
 		method,
 		qs,
 		body,
-		uri: `${(credentials.server as string).replace(/\/$/, '')}/${endpoint}`,
+		uri: `${credentials.server}/${endpoint}`,
 		json: true
 	};
 

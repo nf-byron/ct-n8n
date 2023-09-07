@@ -1,0 +1,69 @@
+{
+    "name": "n8n-nodes-shipstation",
+    "version": "1.0.0",
+    "description": "Ship Station module built by BillRun.",
+    "license": "SEE LICENSE IN LICENSE.md",
+    "homepage": "https://bill.run",
+    "author": {
+        "name": "Yonatan Rosemarin",
+        "email": "yonatan.r@billrun.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://git.bill.run/sdoc/n8n-plugins/n8n-nodes-shipstation.git"
+    },
+    "main": "index.js",
+    "scripts": {
+        "dev": "npm run watch",
+        "build": "tsc && gulp",
+        "tslint": "tslint -p tsconfig.json -c tslint.json",
+        "watch": "tsc --watch",
+        "test": "jest"
+    },
+    "files": [
+        "dist"
+    ],
+    "n8n": {
+        "credentials": [
+            "dist/credentials/ShipStationApi.credentials"
+        ],
+        "nodes": [
+            "dist/nodes/ShipStation/ShipStation.node.js",
+            "dist/nodes/ShipStation/ShipStationTrigger.node.js"
+        ]
+    },
+    "devDependencies": {
+        "@types/jest": "^25.2.1",
+        "@types/node": "^14.0.27",
+        "@types/request-promise-native": "~1.0.15",
+        "gulp": "^4.0.0",
+        "jest": "^24.9.0",
+        "n8n-workflow": "~0.39.0",
+        "ts-jest": "^24.0.2",
+        "tslint": "^6.1.2",
+        "typescript": "~3.7.4"
+    },
+    "dependencies": {
+        "@types/express": "^4.17.7",
+        "@types/lodash": "^4.14.160",
+        "express": "^4.17.1",
+        "n8n-core": "^0.10.0"
+    },
+    "jest": {
+        "transform": {
+            "^.+\\.tsx?$": "ts-jest"
+        },
+        "testURL": "http://localhost/",
+        "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+        "testPathIgnorePatterns": [
+            "/dist/",
+            "/node_modules/"
+        ],
+        "moduleFileExtensions": [
+            "ts",
+            "tsx",
+            "js",
+            "json"
+        ]
+    }
+}

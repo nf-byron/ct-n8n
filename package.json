@@ -10,7 +10,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://git.bill.run/sdoc/n8n-plugins/n8n-nodes-shipstation.git"
+        "url": "git+https://github.com/nf-byron/ct-n8n.git"
     },
     "main": "index.js",
     "scripts": {
